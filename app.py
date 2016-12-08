@@ -1,3 +1,5 @@
+from __future__ import absolute_import, print_function
+
 import json
 import os
 import sys
@@ -6,12 +8,16 @@ import requests
 from flask import Flask, request
 
 app = Flask(__name__)
+RESPONSE_MESSAGE = 'Deja de hablar y comienza a actuar'
 
 
 @app.route('/', methods=['GET'])
 def verify():
-    # when the endpoint is registered as a webhook, it must echo back
-    # the 'hub.challenge' value it receives in the query arguments
+    """ Verify Token.
+    when the endpoint is registered as a webhook, it must echo back
+    the 'hub.challenge' value it receives in the query arguments
+
+    """
     if request.args.get('hub.mode') == 'subscribe' and request.args.get('hub.challenge'):
         if not request.args.get('hub.verify_token') == os.environ['VERIFY_TOKEN']:
             return 'Verification token mismatch', 403
@@ -38,8 +44,15 @@ def webhook():
                     sender_id = messaging_event['sender']['id']        # the facebook ID of the person sending you the message
                     recipient_id = messaging_event['recipient']['id']  # the recipient's ID, which should be your page's facebook ID
                     message_text = messaging_event['message']['text']  # the message's text
+                    kwargs = {
+                        'sender': sender_id,
+                        'recipient': recipient_id,
+                        'message': message_text,
+                    }
 
-                    send_message(sender_id, 'got it, thanks!')
+                    send_message(
+                        **kwargs
+                    )
 
                 if messaging_event.get('delivery'):  # delivery confirmation
                     pass
@@ -53,12 +66,26 @@ def webhook():
     return 'ok', 200
 
 
-def send_message(recipient_id, message_text):
+def send_message(*args, **kwargs):
+    # sender = kwargs.get('sender')
+    recipient = kwargs.get('recipient')
+    # message = kwargs.get('message')
+    log_message = [
+        'sender -> {sender}',
+        'recipient -> {recipient}',
+        'message -> {message}',
+    ]
+
+    log(
+        ' '.join(log_message).format(
+            **kwargs
+        )
+    )
 
     log(
         'sending message to {recipient}: {text}'.format(
-            recipient=recipient_id,
-            text=message_text
+            recipient=recipient,
+            text=RESPONSE_MESSAGE
         )
     )
 
@@ -70,25 +97,25 @@ def send_message(recipient_id, message_text):
     }
     data = json.dumps({
         'recipient': {
-            'id': recipient_id
+            'id': recipient
         },
         'message': {
-            'text': message_text
+            'text': RESPONSE_MESSAGE
         }
     })
-    r = requests.post(
+    response = requests.post(
         'https://graph.facebook.com/v2.6/me/messages',
         params=params,
         headers=headers,
         data=data
     )
-    if r.status_code != 200:
-        log(r.status_code)
-        log(r.text)
+    if response.status_code != 200:
+        log(response.status_code)
+        log(response.text)
 
 
 def log(message):  # simple wrapper for logging to stdout on heroku
-    print str(message)
+    print(str(message))
     sys.stdout.flush()
 
 
