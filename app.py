@@ -67,7 +67,7 @@ def webhook():
 
 
 def send_message(*args, **kwargs):
-    # sender = kwargs.get('sender')
+    sender = kwargs.get('sender')
     recipient = kwargs.get('recipient')
     # message = kwargs.get('message')
     log_message = [
@@ -97,7 +97,7 @@ def send_message(*args, **kwargs):
     }
     data = json.dumps({
         'recipient': {
-            'id': recipient
+            'id': sender
         },
         'message': {
             'text': RESPONSE_MESSAGE
