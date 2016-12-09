@@ -104,7 +104,7 @@ def send_message(*args, **kwargs):
         }
     })
     response = requests.post(
-        'https://graph.facebook.com/v2.6/me/messages',
+        'https://graph.facebook.com/v2.8/me/messages',
         params=params,
         headers=headers,
         data=data
