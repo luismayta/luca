@@ -67,7 +67,7 @@ def webhook():
 
 
 def send_message(*args, **kwargs):
-    # sender = kwargs.get('sender')
+    sender = kwargs.get('sender')
     recipient = kwargs.get('recipient')
     # message = kwargs.get('message')
     log_message = [
@@ -97,14 +97,14 @@ def send_message(*args, **kwargs):
     }
     data = json.dumps({
         'recipient': {
-            'id': recipient
+            'id': sender
         },
         'message': {
             'text': RESPONSE_MESSAGE
         }
     })
     response = requests.post(
-        'https://graph.facebook.com/v2.6/me/messages',
+        'https://graph.facebook.com/v2.8/me/messages',
         params=params,
         headers=headers,
         data=data
