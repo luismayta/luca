@@ -1,0 +1,10 @@
+version: '2'
+services:
+  chatbot:
+    build: .
+    image: rcarmo/alpine-python:2.7
+    ports:
+      - "5000:5000"
+    volumes:
+    - ./:/docker/
+    restart: always
