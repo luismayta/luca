@@ -1,5 +1,4 @@
-FROM frolvlad/alpine-python2
-
+FROM rcarmo/alpine-python:2.7
 RUN apk --update add \
   bash \
   cmake \
@@ -8,12 +7,13 @@ RUN apk --update add \
   g++ \
   zlib-dev
 
-# Define working directory.
-WORKDIR /docker/
+ONBUILD COPY . /docker
+ONBUILD RUN pip install -r /docker/requirements/dev.txt
 
-# Install.
-# RUN \
-#   make install
+# Define working directory.
+WORKDIR /docker
+
+EXPOSE 5000
 
 # Define default command.
-CMD ["bash"]
+CMD gunicorn app:app -b :5000
