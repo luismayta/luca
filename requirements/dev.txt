@@ -5,7 +5,7 @@ bumpversion==0.5.3
 docker-compose==1.11.2
 elpy==1.14.1
 epc==0.0.5
-flake8==3.0.4
+flake8==3.3.0
 grip==4.3.2
 importmagic==0.1.7
 ipdb==0.10.1
