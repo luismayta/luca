@@ -12,6 +12,6 @@ ipdb==0.10.2
 ipython==5.3.0
 ipython-genutils==0.2.0
 jedi==0.10.2
-pre-commit==0.13.3
+pre-commit==0.13.6
 pylint==1.6.5
-yapf==0.16.0
+yapf==0.16.1
