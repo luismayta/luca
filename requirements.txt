@@ -5,5 +5,5 @@ itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 requests==2.13.0
-Werkzeug==0.12.1
+Werkzeug==0.12.2
 wsgiref==0.1.2
