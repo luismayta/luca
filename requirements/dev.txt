@@ -13,4 +13,4 @@ ipython-genutils==0.2.0
 jedi==0.10.2
 pylint==1.7.2
 yapf==0.16.3
-pre-commit==0.16.2
+pre-commit==1.0.0
