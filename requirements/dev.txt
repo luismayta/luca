@@ -5,7 +5,7 @@ docker-compose==1.15.0
 elpy==1.16.0
 epc==0.0.5
 flake8==3.4.1
-grip==4.3.2
+grip==4.4.0
 importmagic==0.1.7
 ipython==6.1.0
 ipdb==0.10.3
