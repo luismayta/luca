@@ -1,16 +1,32 @@
-# Ventorystack: Docker Compose
+# python-facebook-chatbot: Docker Compose
 # https://docs.docker.com/compose/
 #
 # Usage: docker-compose up
 version: '3'
 services:
-  chatbot:
+
+  app:
+    ports:
+      - "80:8000"
+    restart: always
+    image: python:3.6.0
+    environment: &environment
+      - APP_NAME=python-facebook-chatbot
     build:
       context: .
-      dockerfile: docker/web/Dockerfile
-    image: python:2.7.9
-    ports:
-      - "5000:5000"
+      dockerfile: docker/app/Dockerfile
     volumes:
-    - .:/app
+      - .:/usr/src
+    env_file:
+      - .env
+
+  docs:
     restart: always
+    image: labpositiva/latex:3.6.1
+    build:
+      context: .
+      dockerfile: docker/docs/Dockerfile
+    volumes:
+      - .:/app
+    env_file:
+      - .env
