@@ -64,8 +64,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Python-Facebook-Chatbot'
-copyright = '2017, Transformacion Digital'
-author = 'Transformacion Digital'
+copyright = '2017, Luis Mayta'
+author = 'Luis Mayta'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -137,7 +137,7 @@ latex_elements = {
 latex_documents = [
     (
         master_doc, 'Python-Facebook-Chatbot.tex', 'Python-Facebook-Chatbot Documentation',
-        'Transformacion Digital', 'manual',
+        'Luis Mayta', 'manual',
     ),
 ]
 
