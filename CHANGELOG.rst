@@ -9,7 +9,16 @@ This file uses change log convention from `keep a CHANGELOG`_.
 *************
 
 
-.. _`Unreleased`: https://github.com/luismayta/python-facebook-chatbot/compare/0.0.0...HEAD
-.. _0.0.0: https://github.com/luismayta/python-facebook-chatbot/compare/0.0.0...0.0.1
+`0.1.0`_ - 2017-09-28
+**********************
+
+
+`0.0.1`_ - 2016-12-16
+**********************
+
+
+.. _`Unreleased`: https://github.com/luismayta/python-facebook-chatbot/compare/0.1.0...HEAD
+.. _`0.1.0`: https://github.com/luismayta/python-facebook-chatbot/compare/0.0.1...0.1.0
+.. _`0.0.1`: https://github.com/luismayta/python-facebook-chatbot/compare/0.0.0...0.0.1
 
 .. _`keep a CHANGELOG`: http://keepachangelog.com/en/0.3.0/
