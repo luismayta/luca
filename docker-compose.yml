@@ -1,10 +1,32 @@
-version: '2'
+# python-facebook-chatbot: Docker Compose
+# https://docs.docker.com/compose/
+#
+# Usage: docker-compose up
+version: '3'
 services:
-  chatbot:
-    build: .
-    image: rcarmo/alpine-python:2.7
+
+  app:
     ports:
-      - "5000:5000"
-    volumes:
-    - ./:/docker/
+      - "80:8000"
     restart: always
+    image: python:3.6.0
+    environment: &environment
+      - APP_NAME=python-facebook-chatbot
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    volumes:
+      - .:/usr/src
+    env_file:
+      - .env
+
+  docs:
+    restart: always
+    image: labpositiva/latex:3.6.1
+    build:
+      context: .
+      dockerfile: docker/docs/Dockerfile
+    volumes:
+      - .:/app
+    env_file:
+      - .env

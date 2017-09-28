@@ -1,0 +1,12 @@
+{
+  "dev": {
+    "api_handler_name": "python-facebook-chatbot-dev",
+    "api_handler_arn": "arn:aws:lambda:us-east-1:302991959383:function:python-facebook-chatbot-dev",
+    "lambda_functions": {},
+    "backend": "api",
+    "chalice_version": "1.0.2",
+    "rest_api_id": "6sa0fy4v12",
+    "api_gateway_stage": "api",
+    "region": "us-east-1"
+  }
+}
