@@ -1,3 +1,4 @@
+.env
 # Static and media development files.
 media/
 src/assets/
@@ -19,6 +20,12 @@ bower_components
 # Local databases
 *.sqlite3
 
+# Test databases
+*.sqlite3*
+
+# Redis
+*.rdb
+
 *.bak
 .#*
 # Byte-compiled / optimized / DLL files
@@ -32,6 +39,7 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
+.autoenv.zsh
 build/
 develop-eggs/
 dist/
@@ -42,7 +50,6 @@ lib/
 lib64/
 parts/
 sdist/
-var/
 *.egg-info/
 .installed.cfg
 *.egg
@@ -82,3 +89,27 @@ target/
 
 # ignored files Vagrant
 .vagrant
+# Files pid
+*.pid
+# files translate
+
+# files lock
+*.lock
+provision/ansible/roles/contrib
+.env
+
+.autoenv.zsh*.retry
+*.retry
+.wercker/
+dumps
+*.retry
+;
+.terraform
+.backup
+*.backup
+*.tfstate
+terraform.tfstate.d
+*.out
+*.log
+*.aux
+*.pdf
