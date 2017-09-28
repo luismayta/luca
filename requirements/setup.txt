@@ -4,7 +4,7 @@ bumplus==0.0.8
 bumpversion==0.5.3
 chalice==1.0.3
 docker-compose==1.16.1
-elpy==1.15.0
+elpy==1.16.0
 epc==0.0.5
 flake8==3.3.0
 importmagic==0.1.7
