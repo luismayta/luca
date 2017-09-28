@@ -34,44 +34,31 @@ windows:
       panes:
         - editor:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
-            - <%= ENV["EDITOR"] %>
         - docker:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
   - python:
       layout: main-vertical
       panes:
         - python:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
-            - ipython
   - databases:
       layout: main-vertical
       panes:
         - postgresql:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
         - shell:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
   - docker:
       layout: main-vertical
       panes:
         - docker:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
         - shell:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
   - tools:
       layout: main-vertical
       panes:
-        - watch:
+        - utils:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
-            - make watch
-        - grip:
+        - docs:
             - pyenv activate python-facebook-chatbot
-            - gvm pkgset use python-facebook-chatbot
-            - make grip

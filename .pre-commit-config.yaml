@@ -1,5 +1,6 @@
+repos:
 -   repo: git@github.com:pre-commit/pre-commit-hooks
-    sha: 7539d8bd1a00a3c1bfd34cdb606d3a6372e83469
+    sha: v0.9.5
     hooks:
     -   id: detect-private-key
         files: ^(?!\.?git-crypt)
@@ -27,13 +28,13 @@
     -   id: requirements-txt-fixer
     -   id: name-tests-test
 -   repo: git://github.com/pre-commit/mirrors-pylint
-    sha: v1.6.4
+    sha: v1.7.2
     hooks:
     -   id: pylint
         args:
         - --rcfile=.pylintrc
 -   repo: git://github.com/pre-commit/mirrors-scss-lint
-    sha: v0.50.2
+    sha: v0.54.0
     hooks:
     -   id: scss-lint
         files: \.(scss)$
@@ -49,6 +50,6 @@
         args:
         - --silent-overwrite
 -   repo: git://github.com/detailyang/pre-commit-shell
-    sha: 1fdffa0434cde2b87f19ad258201d3e81481af5f
+    sha: 1.0.2
     hooks:
     -   id: shell-lint
