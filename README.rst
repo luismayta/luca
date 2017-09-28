@@ -12,7 +12,7 @@ python-facebook-chatbot
 .. contents:: Table of Contents:
     :local:
 
-Python Facebok Chatbot
+Python Facebook Chatbot
 
 Features
 ********
