@@ -13,7 +13,7 @@ PROJECT_NAME_DEV := $(PROJECT_NAME)_dev
 PROJECT_NAME_STAGE := $(PROJECT_NAME)_stage
 PROJECT_NAME_TEST := $(PROJECT_NAME)_test
 
-PYTHON_VERSION=3.6.0
+PYTHON_VERSION=3.6.1
 PYENV_NAME="${PROJECT_NAME}"
 
 # Configuration.
@@ -26,33 +26,36 @@ SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements/
 FILE_README=$(ROOT_DIR)/README.rst
 
-
 include *.mk
 
 help:
 	@echo '${MESSAGE} Makefile for bot lannister'
 	@echo ''
 	@echo 'Usage:'
-	@echo '    make environment               create environment with pyenv'
-	@echo '    make install                   install dependences python by env'
-	@echo '    make clean                     remove files of build'
-	@echo '    make setup                     install requirements'
+	@echo '    environment               create environment with pyenv'
+	@echo '    install                   install dependences python by env'
+	@echo '    clean                     remove files of build'
+	@echo '    setup                     install requirements'
 	@echo ''
 	@echo '    Docker:'
 	@echo ''
-	@echo '        make docker.build         build all services with docker-compose'
-	@echo '        make docker.down          down services docker-compose'
-	@echo '        make docker.ssh           connect by ssh to container'
-	@echo '        make docker.stop          stop services by env'
-	@echo '        make docker.verify_network           verify network'
-	@echo '        make docker.up             up services of docker-compose'
-	@echo '        make docker.list           list services of docker'
+	@echo '        docker.build         build all services with docker-compose'
+	@echo '        docker.down          down services docker-compose'
+	@echo '        docker.ssh           connect by ssh to container'
+	@echo '        docker.stop          stop services by env'
+	@echo '        docker.verify_network           verify network'
+	@echo '        docker.up             up services of docker-compose'
+	@echo '        docker.run            run {service} {env}'
+	@echo '        docker.list           list services of docker'
+	@echo ''
 	@echo '    Docs:'
 	@echo ''
 	@echo '        docs.show                  Show restview README'
 	@echo '        docs.make.html             Make documentation html'
 	@echo '        docs.make.pdf              Make documentation pdf'
+	@echo ''
 	@echo '    Tests:'
+	@echo ''
 	@echo '        test.lint                  Run all pre-commit'
 	@echo '        test.syntax                Run all syntax in code'
 	@echo ''
@@ -64,9 +67,9 @@ clean:
 	@echo
 
 setup: clean
-	@make clean
 	pip install -r "${REQUIREMENTS_DIR}/setup.txt"
 	pre-commit install
+	cp -rf .env-sample .env
 
 environment: clean
 	@if [ -e "$(HOME)/.pyenv" ]; then \
