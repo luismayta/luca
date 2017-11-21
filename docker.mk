@@ -3,13 +3,19 @@
 
 DOCKER_NETWORK = $(PROJECT_NAME)_network
 
-docker.build:
-	@make clean
+docker.run: clean
+	@if [ "${env}" == "" ]; then \
+		docker-compose run --rm --service-ports "${service}" bash; \
+	else \
+		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml run --rm --service-ports "${service}" bash; \
+	fi
+
+docker.build: clean
 	@echo $(MESSAGE) "Building environment: ${env}"
 	@if [ "${env}" == "" ]; then \
-		docker-compose build --no-cache; \
+		docker-compose build --pull --no-cache; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml build --no-cache; \
+		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml build --pull --no-cache; \
 	fi
 
 docker.down: clean
