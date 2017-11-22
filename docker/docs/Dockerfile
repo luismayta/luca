@@ -1,14 +1,14 @@
 FROM labpositiva/latex:3.6.1
 MAINTAINER Luis Mayta <@slovacus>
 
-COPY ./requirements/ /app/requirements/
-COPY ./requirements.txt /app/requirements.txt
+LABEL NAME python
+LABEL VERSION 3.6.1
 
-RUN apt-get update -y \
-  && apt-get install -y build-essential
+COPY ./requirements/ /usr/src/requirements/
+COPY ./requirements.txt /usr/src/requirements.txt
 
-# set working directory to /app/
-WORKDIR /app
+# set working directory to /usr/src
+WORKDIR /usr/src
 
 # Install sphinx dependences
-RUN pip install -r /app/requirements/docs.txt
+RUN pip install --force-reinstall -r /usr/src/requirements/docs.txt
