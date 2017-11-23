@@ -10,4 +10,4 @@ services:
       - APP_NAME=python-facebook-chatbot
     build:
       context: .
-      dockerfile: docker/app-test/Dockerfile
+      dockerfile: provision/docker/app-test/Dockerfile

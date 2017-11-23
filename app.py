@@ -1,38 +1,32 @@
 # -*- coding: utf-8 -*-
-from chalice import Chalice
-from chalice import UnauthorizedError
+from sanic import Sanic
+from sanic.request import RequestParameters
+from sanic.response import json
 
-from chalicelib import APP_NAME
-from chalicelib import APP_VERIFY_TOKEN
-from chalicelib import RESPONSE_MESSAGE
-
-app = Chalice(app_name=APP_NAME)
+app = Sanic(__name__)
 
 
 @app.route('/', methods=['GET'])
-def verify():
+async def verify(request):
     """ Verify Token.
     when the endpoint is registered as a webhook, it must echo back
     the 'hub.challenge' value it receives in the query arguments
-
     """
-    request = app.current_request
-    if not request.query_params:
-        return {'response': RESPONSE_MESSAGE}
+    query_params = RequestParameters()
+    if not query_params:
+        return json({'response': 'hacer > hablar'})
 
-    if request.query_params.get('hub.verify_token') == APP_VERIFY_TOKEN:
-        return {
-            request.query_params.get('hub.challenge'),
-        }
-    else:
-        return UnauthorizedError('Err, Token Invalid')
+    if query_params.get('hub.verify_token') == 'hacker':
+        return json({
+            query_params.get('hub.challenge'),
+        })
+    return json({'Err, Token Invalid'})
 
 
 @app.route('/', methods=['POST'])
-def webhook():
-    request = app.current_request
-    messages = request.json_body
+async def webhook(request):
+    messages = json(request.body)
     for entry in messages['entry']:
         for message in entry['messaging']:
-            return {'response': 'o/'}
-    return {'response': 'o/'}
+            return json({'response': '{} o/'.format(message)})
+    return json({'response': 'o/'})

@@ -22,3 +22,8 @@ Dockerfile
 *.log
 *.pyc
 *.tar*
+*.zip
+.cache
+*.rar
+# path build sphinx
+docs/_build
