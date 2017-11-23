@@ -90,7 +90,7 @@
     hooks:
     -   id: python-bandit-vulnerability-check
         args:
-        - --exclude=B104
+        - --skip=B104
         files: .py$
 -   repo: https://github.com/pre-commit/mirrors-csslint
     sha: v1.0.5
