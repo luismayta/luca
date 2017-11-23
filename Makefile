@@ -27,6 +27,8 @@ EXTRAS_DIR:= $(ROOT_DIR)/extras
 SCRIPT_DIR=$(EXTRAS_DIR)/scripts
 SOURCE_DIR=$(ROOT_DIR)/
 REQUIREMENTS_DIR=$(ROOT_DIR)/requirements/
+PROVISION_DIR=$(ROOT_DIR)/provision/
+DOCKER_COMPOSE_DIR=$(PROVISION_DIR)/docker-compose/
 FILE_README=$(ROOT_DIR)/README.rst
 
 include *.mk
