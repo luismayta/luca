@@ -1,8 +1,8 @@
 FROM python:3.6.1-alpine
 MAINTAINER Luis Mayta <@slovacus>
 
-LABEL NAME python
-LABEL VERSION 3.6.1
+LABEL NAME python-facebook-chatbot
+LABEL VERSION 0.1.0
 
 ENV PACKAGES nginx supervisor bash git libmagic
 ENV PACKAGES_DEPENDENCES git \

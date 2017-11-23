@@ -6,10 +6,11 @@ version: '3'
 services:
 
   app:
+    hostname: app
     ports:
       - "80:8000"
     restart: always
-    image: python:3.6.0
+    image: python:3.6.1-alpine
     environment: &environment
       - APP_NAME=python-facebook-chatbot
     build:
@@ -27,6 +28,6 @@ services:
       context: .
       dockerfile: docker/docs/Dockerfile
     volumes:
-      - .:/app
+      - .:/usr/src
     env_file:
       - .env

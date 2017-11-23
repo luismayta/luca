@@ -24,7 +24,7 @@ Requirements:
 
 List of applications:
 
-- `Python 3.6.0`_
+- `Python 3.6.1`_
 - `Docker`_
 - `Docker Compose`_
 
@@ -50,6 +50,7 @@ Build images
 
   λ make docker.build
 
+
 Up services
 -----------
 
@@ -63,27 +64,37 @@ Actions:
 .. code-block:: bash
 
   λ make
-    ༼ つ ◕_◕ ༽つ Actions for python-facebook-chatbot
-
+    ༼ つ ◕_◕ ༽つ Makefile for python-facebook-chatbot
     Usage:
-        make environment               create environment with pyenv
-        make install                   install dependences python by env
-        make clean                     remove files of build
-        make setup                     install requirements
+        environment               create environment with pyenv
+        install                   install dependences python by env
+        clean                     remove files of build
+        setup                     install requirements
+        hooks                     copy hooks for git
 
         Docker:
 
-            make docker.build         build all services with docker-compose
-            make docker.down          down services docker-compose
-            make docker.ssh           connect by ssh to container
-            make docker.stop          stop services by env
-            make docker.verify_network           verify network
-            make docker.up             up services of docker-compose
-            make docker.list           list services of docker
+            docker.build         build all services with docker-compose
+            docker.cleanup       Clean images docker unnecesary
+            docker.down          down services docker-compose
+            docker.list          list services of docker
+            docker.ssh           connect by ssh to container
+            docker.stop          stop services by env
+            docker.status        status container by env
+            docker.verify_network           verify network
+            docker.up             up services of docker-compose
+            docker.run            run {service} {env}
+            docker.list           list services of docker
+
         Docs:
 
             docs.show                  Show restview README
+            docs.make.html             Make documentation html
+            docs.make.pdf              Make documentation pdf
+
         Tests:
+
+            test                       Run All tests with coverage
             test.lint                  Run all pre-commit
             test.syntax                Run all syntax in code
 
@@ -109,7 +120,7 @@ Credits
 -  `author`_
 -  `contributors`_
 
-Made with ♥️and ☕️by `author`_ and `company`_.
+Made with :heart: ️:coffee:️ and :pizza: by `author`_ and `company`_.
 
 .. |Wercker| image::
              https://app.wercker.com/status/642f4288274e91f723ec2ecf7c03966c/s/ 'wercker status'
@@ -129,6 +140,6 @@ Made with ♥️and ☕️by `author`_ and `company`_.
 .. _`author`: https://github.com/luismayta
 
 .. dependences
-.. _Python 3.6.0: https://www.python.org/downloads/release/python-361
+.. _Python 3.6.1: https://www.python.org/downloads/release/python-361
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose/
