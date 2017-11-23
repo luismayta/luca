@@ -7,7 +7,7 @@ docker.run: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose run --rm --service-ports "${service}" bash; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml run --rm --service-ports "${service}" bash; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml run --rm --service-ports "${service}" bash; \
 	fi
 
 docker.build: clean
@@ -15,7 +15,7 @@ docker.build: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose build; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml build; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml build; \
 	fi
 
 docker.down: clean
@@ -23,7 +23,7 @@ docker.down: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose -p "${PROJECT}" down --remove-orphans; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml down --remove-orphans; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml down --remove-orphans; \
 	fi
 
 docker.ssh: clean
@@ -34,7 +34,7 @@ docker.status: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose -p "${PROJECT}" ps; \
 	else \
-		docker-compose -p "${PROJECT}" -f docker-compose.yml -f docker-compose/"${env}".yml ps; \
+		docker-compose -p "${PROJECT}" -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml ps; \
 	fi
 
 docker.stop: clean
@@ -42,7 +42,7 @@ docker.stop: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose -p "${PROJECT}" stop; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml stop; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml stop; \
 	fi
 
 docker.cleanup: clean
@@ -59,7 +59,7 @@ docker.up: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose -p "${PROJECT}" up --remove-orphans; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml up --remove-orphans; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml up --remove-orphans; \
 	fi
 
 docker.list: clean
@@ -67,5 +67,5 @@ docker.list: clean
 	@if [ "${env}" == "" ]; then \
 		docker-compose -p "${PROJECT_DEV}" ps; \
 	else \
-		docker-compose -f docker-compose.yml -f docker-compose/"${env}".yml ps; \
+		docker-compose -f docker-compose.yml -f $(DOCKER_COMPOSE_DIR)/"${env}".yml ps; \
 	fi
