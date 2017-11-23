@@ -56,11 +56,11 @@ RUN apk add --update --no-cache --virtual .build-deps \
     && rm -rf /etc/nginx/conf.d/default.conf
 
 # Copy the modified Nginx conf
-COPY docker/templates/etc/nginx/nginx.conf /etc/nginx/nginx.conf
-COPY docker/templates/etc/nginx/conf.d/nginx.conf /etc/nginx/conf.d/
+COPY provision/docker/templates/etc/nginx/nginx.conf /etc/nginx/nginx.conf
+COPY provision/docker/templates/etc/nginx/conf.d/nginx.conf /etc/nginx/conf.d/
 # Custom Supervisord config
-COPY docker/templates/etc/supervisord.conf /etc/
-COPY docker/templates/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY provision/docker/templates/etc/supervisord.conf /etc/
+COPY provision/docker/templates/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 80
 
