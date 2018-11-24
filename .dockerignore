@@ -4,7 +4,6 @@ node_modules/
 .git/
 coverage/
 vendor/
-docs/
 
 Dockerfile
 
@@ -22,8 +21,3 @@ Dockerfile
 *.log
 *.pyc
 *.tar*
-*.zip
-.cache
-*.rar
-# path build sphinx
-docs/_build
