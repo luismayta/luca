@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = Python-Facebook-Chatbot
+SPHINXPROJ    = Luca
 SOURCEDIR     = .
 BUILDDIR      = _build
 

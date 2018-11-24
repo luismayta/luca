@@ -14,8 +14,8 @@
 .. code developer
 .. _cloud computing: https://en.wikipedia.org/wiki/Cloud_computing
 .. _git: https://git-scm.com/
-.. _repositorio: https://bitbucket.org/lapositivatd/python-facebook-chatbot
-.. _company: https://bitbucket.org/lapositivatd
+.. _repositorio: https://github.com/luismayta/luca
+.. _company: https://github.com/luismayta
 .. _Python 3.6.0: https://www.python.org/downloads/release/python-360
 .. _Docker: https://www.docker.com/
 .. _Docker Compose: https://docs.docker.com/compose
@@ -23,7 +23,6 @@
 
 .. Referencias
 
-.. _La positiva: https://www.lapositiva.com.pe/
 .. _medium.com: https://medium.com
 .. _airbnb: https://www.airbnb.com/
 .. _spotify: https://www.spotify.com/
