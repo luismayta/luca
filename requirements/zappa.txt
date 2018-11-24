@@ -1,5 +1,4 @@
 -r ../requirements.txt
 
 # Additional requirements for zappa
-zappa==0.46.2
-zappa-sentry==0.2.3
+zappa==0.47.1
