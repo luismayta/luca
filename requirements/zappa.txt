@@ -1,0 +1,4 @@
+-r ../requirements.txt
+
+# Additional requirements for zappa
+zappa==0.47.1
