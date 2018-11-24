@@ -1,145 +1,115 @@
-python-facebook-chatbot
-#######################
-
-|Wercker| |license|
+|license|
 
 :Version: 0.2.0
-:Web: https://github.com/luismayta/python-facebook-chatbot
-:Download: http://github.com/luismayta/python-facebook-chatbot
-:Source: http://github.com/luismayta/python-facebook-chatbot
-:Keywords: python-facebook-chatbot
+:Web: https://github.com/luismayta/luca
+:Download: https://github.com/luismayta/luca
+:Source: https://github.com/luismayta/luca
+:Keywords: luca
 
 .. contents:: Table of Contents:
     :local:
 
-Python Facebook Chatbot
-
-Features
-********
-
-- Task
-
-Requirements:
-*************
-
-List of applications:
-
-- `Python 3.6.1`_
-- `Docker`_
-- `Docker Compose`_
-
-Quick Start
-***********
-
-- Fork this repository
-
-Usage
-=====
-
-Install dependences
--------------------
-
-.. code-block:: bash
-
-  λ make setup
-
-Build images
-------------
-
-.. code-block:: bash
-
-  λ make docker.build
-
-
-Up services
------------
-
-.. code-block:: bash
-
-  λ make docker.up
-
-Actions:
-********
-
-.. code-block:: bash
-
-  λ make
-    ༼ つ ◕_◕ ༽つ Makefile for python-facebook-chatbot
-    Usage:
-        environment               create environment with pyenv
-        install                   install dependences python by env
-        clean                     remove files of build
-        setup                     install requirements
-        hooks                     copy hooks for git
-
-        Docker:
-
-            docker.build         build all services with docker-compose
-            docker.cleanup       Clean images docker unnecesary
-            docker.down          down services docker-compose
-            docker.list          list services of docker
-            docker.ssh           connect by ssh to container
-            docker.stop          stop services by env
-            docker.status        status container by env
-            docker.verify_network           verify network
-            docker.up             up services of docker-compose
-            docker.run            run {service} {env}
-            docker.list           list services of docker
-
-        Docs:
-
-            docs.show                  Show restview README
-            docs.make.html             Make documentation html
-            docs.make.pdf              Make documentation pdf
-
-        Tests:
-
-            test                       Run All tests with coverage
-            test.lint                  Run all pre-commit
-            test.syntax                Run all syntax in code
+Luca
+====
 
 License
-*******
+-------
 
-MIT
+The code in this repository is licensed under the AGPL 3.0 unless
+otherwise noted.
+
+Please see ``LICENSE.rst`` for details.
+
+How To Contribute
+-----------------
+
+Contributions are very welcome.
+
+Please read `How To Contribute <https://github.com/luismayta/luca/blob/master/CONTRIBUTING.rst>`_ for details.
+
+PR description template should be automatically applied if you are sending PR from gitlab interface; otherwise you
+can find it it at `PULL_REQUEST_TEMPLATE.md <https://github.com/luismayta/luca/blob/master/.github/PULL_REQUEST_TEMPLATE.md>`_
+
+Issue report template should be automatically applied if you are sending it from gitlab UI as well; otherwise you
+can find it at `ISSUE_TEMPLATE.md <https://github.com/luismayta/luca/blob/master/.github/ISSUE_TEMPLATE.md>`_
+
+Reporting Security Issues
+-------------------------
+
+Please do not report security issues in public. Please email slovacus@gmail.com.
+
+Requirements
+------------
+
+This is a list of applications that need to be installed previously to
+enjoy all the goodies of this configuration:
+
+-  `Python 3.6.4`_
+-  `Docker`_
+-  `Docker Compose`_
+
+.. code:: bash
+
+    $ make setup
+    $ make docker.build service=app
+
+
+Troubleshooting
+---------------
+
+Wrong pre-commit with pyenv
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Execute the next:
+
+.. code:: bash
+
+    pyenv shell 3.6.4
+
+
+License
+=======
+
+GNU
 
 Changelog
-*********
+---------
 
 Please see `CHANGELOG`_ for more information what
 has changed recently.
 
 Contributing
-************
+============
 
 Please see `CONTRIBUTING`_ for details.
 
+
+Versioning
+----------
+
+Releases are managed using gitlab release feature. We use [Semantic Versioning](http://semver.org) for all
+the releases. Every change made to the code base will be referred to in the release notes (except for
+cleanups and refactorings).
+
 Credits
-*******
+-------
 
--  `author`_
--  `contributors`_
+-  `CONTRIBUTORS`_
 
-Made with :heart: ️:coffee:️ and :pizza: by `author`_ and `company`_.
+Made with :heart: :coffee: and :pizza: by `company`_.
 
-.. |Wercker| image::
-             https://app.wercker.com/status/642f4288274e91f723ec2ecf7c03966c/s/ 'wercker status'
-  :target: https://app.wercker.com/project/byKey/642f4288274e91f723ec2ecf7c03966c
-  :alt: wercker status
 .. |license| image:: https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square
   :target: LICENSE
   :alt: License
 
 .. Links
-.. _`changelog`: CHANGELOG.rst
-.. _`contributors`: AUTHORS
-.. _`contributing`: CONTRIBUTING.rst
+.. _`CHANGELOG`: CHANGELOG.rst
+.. _`CONTRIBUTORS`: AUTHORS.rst
+.. _`CONTRIBUTING`: CONTRIBUTING.rst
 
 
-.. _`company`: https://github.com/labpositivatd
-.. _`author`: https://github.com/luismayta
-
+.. _`company`: https://github.com/luismayta
 .. dependences
-.. _Python 3.6.1: https://www.python.org/downloads/release/python-361
-.. _Docker: https://www.docker.com/
-.. _Docker Compose: https://docs.docker.com/compose/
+.. _`Python 3.6.4`: https://www.python.org/downloads/release/python-364
+.. _`Docker`: https://www.docker.com/
+.. _`Docker Compose`: https://docs.docker.com/compose/
