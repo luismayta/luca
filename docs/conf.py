@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Python-Facebook-Chatbot documentation build configuration file, created by
+# Luca documentation build configuration file, created by
 # sphinx-quickstart on Tue Jun 20 23:49:25 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -63,7 +63,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Python-Facebook-Chatbot'
+project = 'Luca'
 author = 'Luis Mayta'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -116,7 +116,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'Python-Facebook-Chatbotdoc'
+htmlhelp_basename = 'Lucadoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -135,7 +135,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (
-        master_doc, 'Python-Facebook-Chatbot.tex', 'Python-Facebook-Chatbot Documentation',
+        master_doc, 'Luca.tex', 'Luca Documentation',
         'Luis Mayta', 'manual',
     ),
 ]
@@ -147,7 +147,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     (
-        master_doc, 'python-facebook-chatbot', 'Python-Facebook-Chatbot Documentation',
+        master_doc, 'luca', 'Luca Documentation',
         [author], 1,
     ),
 ]
@@ -160,8 +160,8 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     (
-        master_doc, 'Python-Facebook-Chatbot', 'Python-Facebook-Chatbot Documentation',
-        author, 'Python-Facebook-Chatbot', 'One line description of project.',
+        master_doc, 'Luca', 'Luca Documentation',
+        author, 'Luca', 'One line description of project.',
         'Miscellaneous',
     ),
 ]
