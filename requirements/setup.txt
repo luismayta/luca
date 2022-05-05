@@ -2,7 +2,7 @@ ansible-vault
 bumplus
 bumpversion
 docker-compose
-pre-commit==0.15.2
+pre-commit==2.19.0
 proselint>=0.10.2
 pylint
 restview
